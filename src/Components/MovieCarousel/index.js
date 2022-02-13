@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import Carousel from 'react-elastic-carousel'
+import { Link } from 'react-router-dom'
 
 import api from '../../services/api'
 import { Container, Movies, TitleCategory } from './style'
 
-function CarouselTerror () {
+function MovieCarousel () {
   const [Horror, SetHorror] = useState([])
   const [Romance, SetRomance] = useState([])
   const [Comedy, SetComedy] = useState([])
 
   useEffect(() => {
     async function Movies () {
-      const { data } = await api.get('Terror')
+      const { data } = await api.get('?apikey=bc1843a2&s=Terror')
       console.log(data)
 
       SetHorror(data.Search)
@@ -21,7 +22,7 @@ function CarouselTerror () {
 
   useEffect(() => {
     async function Movies () {
-      const { data } = await api.get('Romance')
+      const { data } = await api.get('?apikey=bc1843a2&s=Romance')
       console.log(data)
 
       SetRomance(data.Search)
@@ -31,7 +32,7 @@ function CarouselTerror () {
 
   useEffect(() => {
     async function Movies () {
-      const { data } = await api.get('Comedia')
+      const { data } = await api.get('?apikey=bc1843a2&s=comedia')
       console.log(data)
 
       SetComedy(data.Search)
@@ -62,7 +63,7 @@ function CarouselTerror () {
 
                             <div key={category.imdbID}>
 
-                                <img src={category.Poster} alt='Foto da categoria' />
+                              <Link to={`/Movie/${category.imdbID}`}> <img src={category.Poster} alt='Foto da categoria' />   </Link>
 
                             </div>
                         ))
@@ -114,4 +115,4 @@ function CarouselTerror () {
   )
 }
 
-export default CarouselTerror
+export default MovieCarousel

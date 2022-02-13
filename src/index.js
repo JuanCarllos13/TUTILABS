@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Home from './pages/home'
+import Routes from './routes/routes'
 import GlobalStyles from './styles/globalstyles'
 
 ReactDOM.render(
     <>
-    <Home/>
+    <Routes/>
     <GlobalStyles/>
     </>,
 

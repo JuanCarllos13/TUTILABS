@@ -1,7 +1,8 @@
 import React from 'react'
 import { BsSearch } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 
-import CarouselTerror from '../../Components/MoviesTerror'
+import MovieCarousel from '../../Components/MovieCarousel'
 import { Container, Header } from './style'
 
 function Home () {
@@ -12,12 +13,12 @@ function Home () {
         <h1>Cine Tuti</h1>
 
         <div>
-          <button><BsSearch size={20} /></button>
+          <Link to={'/Movie'} ><button><BsSearch size={20} /></button> </Link>
 
         </div>
       </Header>
 
-<CarouselTerror/>
+      <MovieCarousel />
     </Container>
   )
 }
