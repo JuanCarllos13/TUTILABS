@@ -22,8 +22,6 @@ function Search () {
 
     try {
       const { data } = await api.get(`?apikey=bc1843a2&s=${nameMovies}`)
-      console.log(data)
-
       setCategories(data.Search)
       //  setShowModal(false)
     } catch {
@@ -31,8 +29,6 @@ function Search () {
       setNameMovies('')
     }
   }
-
-  console.log(categories)
 
   return (
     <Container>
