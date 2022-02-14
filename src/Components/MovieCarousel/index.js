@@ -14,7 +14,7 @@ function MovieCarousel () {
   useEffect(() => {
     async function Movies () {
       const { data } = await api.get('?apikey=bc1843a2&s=Horror')
-      console.log(data)
+  
 
       SetHorror(data.Search)
     }
@@ -24,7 +24,7 @@ function MovieCarousel () {
   useEffect(() => {
     async function Movies () {
       const { data } = await api.get('?apikey=bc1843a2&s=Romance')
-      console.log(data)
+ 
 
       SetRomance(data.Search)
     }
@@ -34,7 +34,7 @@ function MovieCarousel () {
   useEffect(() => {
     async function Movies () {
       const { data } = await api.get('?apikey=bc1843a2&s=Comedy')
-      console.log(data)
+   
 
       SetComedy(data.Search)
     }
@@ -44,7 +44,6 @@ function MovieCarousel () {
   useEffect(() => {
     async function Movies () {
       const { data } = await api.get('?apikey=bc1843a2&s=Drama')
-      console.log(data)
 
       setDrama(data.Search)
     }
