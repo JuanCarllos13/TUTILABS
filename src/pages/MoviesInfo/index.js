@@ -18,8 +18,6 @@ function MovieInfo () {
         history.replace('/')
         return
       }
-
-      console.log(data)
       setMovie(data)
     }
 
