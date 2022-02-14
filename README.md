@@ -26,9 +26,9 @@ O site é composto por 5 seções diferentes:
 
 - **Home::** Nele podemos ver um carrossel com todas as categorias de filmes.
 - **Search:** É onde o usuário digitara o nome do filme ou série que esteja procurando.
-- **Informção** É onde podemos todas as informações do filme, Sinopse, Diretor, Atores e gênero do filme.
+- **Informção** É onde podemos todas as informações do filme, Sinopse, Diretor, Atores e gênero.
 - **Salvos:** Se o usuário deseja salvar um filme para rever de novo, essa página terá todos os filmes que o usuário salvou, podendo também excluir.
-- **Error** Caso o usuário tenha digitado uma URL, caíram nessa página.
+- **Error** Caso o usuário tenha digitado uma URL inválida, caíram nessa página.
 
 ---
 
