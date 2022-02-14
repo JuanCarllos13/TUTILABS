@@ -5,6 +5,14 @@ export const ContainerMain = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+
+    @media(max-width: 700px){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `
 
 export const ContainerInfo = styled.div`
@@ -12,12 +20,22 @@ export const ContainerInfo = styled.div`
     flex-direction: column;
     width: 50%;
     align-items: center;
-    height: 100vh;
+    
+    @media(max-width: 700px){
+        width: 100%;
+        margin-top: 200px;
+    }
 
     img{
         width: 250px;
         height: 250px;
         padding-top: 20px;
+
+        @media(max-width: 700px){
+            width: 80%;
+            padding-top: 0px;
+
+         }
     }
     p{
        font-size: 30px;
@@ -32,7 +50,7 @@ export const ContainerInfo = styled.div`
 
 `
 export const Button = styled.div`
-    
+        
 
     button{
         margin-right: 17px;
@@ -48,7 +66,9 @@ export const Button = styled.div`
         text-decoration: none;
         outline: none;
         color:white;
+        background: none;
     }
+    
 
 `
 
@@ -57,6 +77,10 @@ export const InfoMovie = styled.div`
         padding: 10px 10px;
         align-items: center;
         justify-content: center;
+
+        @media(max-width: 700px){
+            display: block;
+         }
 
     p{
         margin-right: 15px;
@@ -79,13 +103,32 @@ export const ContainerPlay = styled.div`
     justify-content: center;
     height: 100vh;
 
+    @media(max-width: 700px){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
     img{
-        width: 90%;
+        width: 80%;
         height: 90vh;
+
+        
+        @media(max-width: 700px){
+            height: 250px;
+            width: 250px;
+            margin-top: 20px;
+         }
     }
 `
 
 export const Line = styled.div`
     height: 40px;
     border: 0.5px solid #BABABA;
+
+    @media(max-width: 700px){
+            display: none;
+         }
 `

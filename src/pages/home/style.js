@@ -6,25 +6,6 @@ export const Container = styled.div`
     
 `
 
-export const Header = styled.div`
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 54px;
-
-    div{
-        display: flex;
-        gap: 10px;
-        align-items: center;    
-    }
-    button{
-        border: 0;
-         background: none;
-         cursor: pointer;
-    }
-  
-`
-
 export const Movies = styled.div`
     margin-top: 57px;
     display: flex;

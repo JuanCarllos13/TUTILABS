@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams, useHistory, Link } from 'react-router-dom'
 
 import api from '../../services/api'
-import { ContainerMain, ContainerInfo, ContainerPlay, Button, InfoMovie, Line } from './style'
+import { ContainerMain, ContainerInfo, ContainerPlay, InfoMovie, Line, Button } from './style'
 
 function MovieInfo () {
   const [Movie, setMovie] = useState([])
@@ -46,6 +46,10 @@ function MovieInfo () {
     alert('Filme salvo com sucesso')
   }
 
+  function Goback () {
+    history.goBack()
+  }
+
   return (
     <ContainerMain>
 
@@ -78,8 +82,9 @@ function MovieInfo () {
               Trailer
             </a>
           </button>
-          <button onClick={SaveMovie} >Salvar</button>
-          <button>Voltar</button>
+        <Link to={'/favorites'}><button onClick={SaveMovie} >Salvar</button> </Link>
+
+          <button onClick={Goback}>Voltar</button>
         </Button>
 
       </ContainerInfo>

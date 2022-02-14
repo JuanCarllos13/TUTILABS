@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import Header from '../../Components/Header'
+import { Container, ContainerItem } from './style'
+
 function Favorites () {
   const [movie, setmMovie] = useState([])
 
@@ -20,30 +23,33 @@ function Favorites () {
   }
 
   return (
-        <div>
-            <h1>Meus filmes</h1>
+    <Container>
+      <Header />
 
-            {movie.length === 0 && <span>Você não tem nenhum filme salvo</span>}
+      <ContainerItem>
+        <h1>Meus filmes</h1>
 
-            <ul>
-                {
-                    movie.map((item) => {
-                      return (
-                            <li key={item.imdbID}>
-                                <span>{item.Title}</span>
+        {movie.length === 0 && <span>Você não tem nenhum filme salvo</span>}
 
-                                <div>
-                                    <Link to={`/Movie/${item.imdbID}`}>Ver filmes</Link>
-                                    <button onClick={() => handDelete(item.imdbID)}>Excluir</button>
-                                </div>
+        <ul>
+          {movie.map((item) => {
+            return (
+              <li key={item.imdbID}>
+                <span>{item.Title}</span>
 
-                            </li>
+                <div>
+                  <Link to={`/Movie/${item.imdbID}`}>Ver filmes</Link>
+                  <button onClick={() => handDelete(item.imdbID)}>Excluir</button>
+                </div>
 
-                      )
-                    })}
+              </li>
 
-            </ul>
-        </div>
+            )
+          })}
+
+        </ul>
+      </ContainerItem>
+    </Container>
   )
 }
 

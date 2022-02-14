@@ -3,7 +3,7 @@ import { BsSearch } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
 import api from '../../services/api'
-import { Container, Header, ContainerMovie } from './style'
+import { Container, Header, ContainerMovie, Button, Info } from './style'
 
 function Search () {
   const [nameMovies, setNameMovies] = useState()
@@ -36,10 +36,22 @@ function Search () {
 
   return (
     <Container>
+
       <Header>
-        <input type={'text'} valu={nameMovies} onChange={NameMovie} />
-        <button onClick={SearchMovie} > <BsSearch /> </button>
+        <div>
+        <input placeholder="Digite o nome do filme" type={'text'} value={nameMovies}
+          onChange={NameMovie} />
+        <button onClick={SearchMovie}> <BsSearch size={25} /> </button>
+        </div>
+
+       <Link to={'/favorites'}> <Button>Salvos</Button></Link>
       </Header>
+
+      {Object.keys(categories).length === 0 && (
+        <Info>
+          <p>Digite o nome do filme para que apareçam as opções</p>
+        </Info>
+      )}
 
       <ContainerMovie>
 

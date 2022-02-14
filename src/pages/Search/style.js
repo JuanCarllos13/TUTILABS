@@ -3,22 +3,73 @@ import styled from 'styled-components'
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
-    background-color: navajowhite;
-
 `
 
 export const Header = styled.div`
-    height: 60px;
-    background: aliceblue;
+    background-color: white;
+    height: 54px;
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    padding: 0 18px;
-    width: 100%;
-    
-    `
+    padding: 10px 50px;
+    align-items: center;
+
+    div{
+        display: flex;
+        background: none;
+        border-radius: 5px;
+    }
+   
+    input{
+        border: 0;
+        font-size: 15px;
+        color: white;
+        outline: none;
+        border-radius: 0 0 0px 5px;
+        background: #A8CF45;
+        padding: 8px 5px;
+        ::placeholder{
+            color: white;
+        }
+    }
+    button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border: none;
+        background: #A8CF45;
+    }
+    svg{
+        color: white;
+        border-radius: 5px;
+        background: #A8CF45;
+    }
+    a{
+            background: none;
+             text-decoration: none;
+        }
+`
+export const Button = styled.button`
+        border: 0;
+        cursor: pointer;
+        background-color: #A8CF45;
+        border-radius: 17px;
+        padding: 9px;
+        color: white;
+
+       
+
+        &:hover{
+            opacity: 0.8;
+        }
+        &:active{
+            opacity: 0.6;
+        }
+`
 
 export const ContainerMovie = styled.div`
-    background-color: black;
+    //background-color: white;
     color: white;
     min-height: calc(100vh - 60px);
     display: grid;
@@ -43,5 +94,18 @@ export const ContainerMovie = styled.div`
             width: 250px;
             height: 250px;
         }
+    }
+`
+
+export const Info = styled.div`
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+    
+    p{
+        background: white;
+        padding: 94px;
+        border-radius: 33px;
+        font-size: 20px;
     }
 `

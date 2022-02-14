@@ -9,10 +9,11 @@ function MovieCarousel () {
   const [Horror, SetHorror] = useState([])
   const [Romance, SetRomance] = useState([])
   const [Comedy, SetComedy] = useState([])
+  const [Drama, setDrama] = useState([])
 
   useEffect(() => {
     async function Movies () {
-      const { data } = await api.get('?apikey=bc1843a2&s=Terror')
+      const { data } = await api.get('?apikey=bc1843a2&s=Horror')
       console.log(data)
 
       SetHorror(data.Search)
@@ -32,10 +33,20 @@ function MovieCarousel () {
 
   useEffect(() => {
     async function Movies () {
-      const { data } = await api.get('?apikey=bc1843a2&s=comedia')
+      const { data } = await api.get('?apikey=bc1843a2&s=Comedy')
       console.log(data)
 
       SetComedy(data.Search)
+    }
+    Movies()
+  }, [])
+
+  useEffect(() => {
+    async function Movies () {
+      const { data } = await api.get('?apikey=bc1843a2&s=Drama')
+      console.log(data)
+
+      setDrama(data.Search)
     }
     Movies()
   }, [])
@@ -50,68 +61,89 @@ function MovieCarousel () {
   ]
 
   return (
-        <Container>
+    <Container>
 
-            <Movies>
-                <TitleCategory>
-                    <p>Terror</p>
-                </TitleCategory>
-                <Carousel itemsToShow={4} style={{ width: '90%' }} breakPoints={breakPoints} >
+      <Movies>
+        <TitleCategory>
+          <p>Terror</p>
+        </TitleCategory>
+        <Carousel itemsToShow={4} style={{ width: '90%' }} breakPoints={breakPoints} >
 
-                    {
-                        Horror && Horror.map(category => (
+          {
+            Horror && Horror.map(category => (
 
-                            <div key={category.imdbID}>
+              <div key={category.imdbID}>
 
-                              <Link to={`/Movie/${category.imdbID}`}> <img src={category.Poster} alt='Foto da categoria' />   </Link>
+                <Link to={`/Movie/${category.imdbID}`}> <img src={category.Poster} alt='Foto da categoria' />   </Link>
 
-                            </div>
-                        ))
-                    }
-                </Carousel>
+              </div>
+            ))
+          }
+        </Carousel>
 
-            </Movies>
+      </Movies>
 
-            <Movies>
-                <TitleCategory>
-                    <p>Romance</p>
-                </TitleCategory>
-                <Carousel itemsToShow={4} style={{ width: '90%' }} breakPoints={breakPoints} >
+      <Movies>
+        <TitleCategory>
+          <p>Romance</p>
+        </TitleCategory>
+        <Carousel itemsToShow={4} style={{ width: '90%' }} breakPoints={breakPoints} >
 
-                    {
-                        Romance && Romance.map(category => (
+          {
+            Romance && Romance.map(category => (
 
-                            <div key={category.imdbID}>
+              <div key={category.imdbID}>
 
-                                <img src={category.Poster} alt='Foto da categoria' />
+                <Link to={`/Movie/${category.imdbID}`}> <img src={category.Poster} alt='Foto da categoria' />   </Link>
 
-                            </div>
-                        ))
-                    }
-                </Carousel>
+              </div>
+            ))
+          }
+        </Carousel>
 
-            </Movies>
+      </Movies>
 
-            <Movies>
-                <TitleCategory>
-                    <p>Comédia</p>
-                </TitleCategory>
-                <Carousel itemsToShow={4} style={{ width: '90%' }} breakPoints={breakPoints} >
+      <Movies>
 
-                    {
-                        Comedy && Comedy.map(category => (
+        <TitleCategory>
+          <p>Comédia</p>
+        </TitleCategory>
+        <Carousel itemsToShow={4} style={{ width: '90%' }} breakPoints={breakPoints} >
 
-                            <div key={category.imdbID}>
+          {
+            Comedy && Comedy.map(category => (
 
-                                <img src={category.Poster} alt='Foto da categoria' />
+              <div key={category.imdbID}>
 
-                            </div>
-                        ))
-                    }
-                </Carousel>
+                <Link to={`/Movie/${category.imdbID}`}> <img src={category.Poster} alt='Foto da categoria' />   </Link>
 
-            </Movies>
-        </Container>
+              </div>
+            ))
+          }
+        </Carousel>
+
+      </Movies>
+
+      <Movies>
+        <TitleCategory>
+          <p>Drama</p>
+        </TitleCategory>
+        <Carousel itemsToShow={4} style={{ width: '90%' }} breakPoints={breakPoints} >
+
+          {
+            Drama && Drama.map(category => (
+
+              <div key={category.imdbID}>
+
+                <Link to={`/Movie/${category.imdbID}`}> <img src={category.Poster} alt='Foto da categoria' />   </Link>
+
+              </div>
+            ))
+          }
+        </Carousel>
+
+      </Movies>
+    </Container>
   )
 }
 
